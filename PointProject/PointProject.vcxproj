@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{A819D211-ABC2-4BE6-9260-F700EE21D7BC}</ProjectGuid>
-    <RootNamespace>MainProject</RootNamespace>
+    <ProjectGuid>{1EE0B01D-BE77-495F-9E94-AAEC89846EFD}</ProjectGuid>
+    <RootNamespace>PointProject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,12 +138,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="main.h" />
-    <ClInclude Include="Plane.h" />
-    <ClInclude Include="Student.h" />
+    <ClInclude Include="main.cpp" />
+    <ClInclude Include="Point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
