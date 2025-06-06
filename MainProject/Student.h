@@ -1,6 +1,8 @@
 #pragma once
 #include "main.h"
 
+// KISS & DRY
+
 // entity-class
 class Student {
 public:
@@ -11,68 +13,54 @@ public:
 	char gender;
 	bool alive;
 	double mark;
+	int size;
+	string* subjects;
 
-	// default-constructor (конструктор по умолчани)
-	Student() {
+	// default-constructor or constructor without arguments
+	// (конструктор по умолчани)
+	Student() : Student("no name", "no surname") {
 		//cout << "default-constructor" << endl;
-		firstname = "no name";
-		surname = "no surname";
-		age = 0;
-		_class = 0;
-		gender = 'm';
-		alive = false;
-		mark = 4;
 	}
 
 	// constructor with arguments (конструкторы с параметрами)
-	Student(string name, string sname) {
-		//cout << "constructor with arguments" << endl;
-		firstname = name;
-		surname = sname;
-		age = 0;
-		_class = 0;
-		gender = 'm';
-		alive = false;
-		mark = 4;
+	Student(string firstname, string surname) : firstname(firstname),
+		surname(surname), age(0), _class(0), gender('m'), alive(false),
+		mark(0), size(0), subjects(nullptr) {
+		//cout << "constructor with arguments" << endl;	
 	}
 
-	Student(string name, string sname, int a) {
+	Student(string firstname, string surname, int age) : Student(firstname,
+		surname, age, 0, 'm', true, 4, 0, nullptr) {
 		//cout << "constructor with arguments" << endl;
-		firstname = name;
-		surname = sname;
-		age = a;
-		_class = 0;
-		gender = 'm';
-		alive = false;
-		mark = 4;
 	}
 
 	// canonical constructor (канонический конструктор)
-	Student(string name, string sname, int a, int cl, char g, bool al, double m) {
+	Student(string firstname, string surname, int age, int _class,
+		char gender, bool alive, double mark, int size, string* subjects) {
 		//cout << "canonical constructor" << endl;
-		firstname = name;
-		surname = sname;
-		age = a;
-		_class = cl;
-		gender = g;
-		alive = al;
-		mark = m;
+		this->firstname = firstname;
+		this->surname = surname;
+		this->age = age;
+		this->_class = _class;
+		this->gender = gender;
+		this->alive = alive;
+		this->mark = mark;
+		this->size = size;
+		this->subjects = subjects;
 	}
 
 	// copy-constructor (конструктор-копирования)
-	Student(const Student& student) {
+	Student(const Student& student) : Student(student.firstname,
+		student.surname, student.age, student._class, student.gender,
+		student.alive, student.mark, student.size, student.subjects) {
 		//cout << "canonical constructor" << endl;
-		firstname = student.firstname;
-		surname = student.surname;
-		age = student.age;
-		_class = student._class;
-		gender = student.gender;
-		alive = student.alive;
-		mark = student.mark;
 	}
 
 	~Student() {
-		cout << "destructor" << endl;
+		// cout << "destructor" << endl;
+		if (subjects != nullptr) {
+			delete[] subjects;
+		}
 	}
 
 	string toString() {
