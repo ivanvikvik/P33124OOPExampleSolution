@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Manager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Initializer.h" />
