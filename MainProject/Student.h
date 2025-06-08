@@ -65,7 +65,7 @@ public:
 
 	string toString() {
 		string s = firstname;
-		s += " " + surname;
+		s += " " + surname + ".";
 		s += ", age = " + to_string(age);
 		s += ", class = " + to_string(_class);
 		s += ", gender = " + to_string(gender);
