@@ -27,8 +27,7 @@ int main() {
 	cout << "Best student: " << bestStudent.toString() << endl;
 	cout << "Worst student: " << worstStudent.toString() << endl;
 	cout << "Students' average mark is " << average << endl;
-
-
+	
 	delete[] students;
 	
 	return 0;
