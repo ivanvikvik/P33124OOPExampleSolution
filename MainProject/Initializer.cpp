@@ -1,6 +1,6 @@
 #include "Initializer.h"
 
-void Initializer::init(Student* students, int size) {
+void Initializer::init(Group group) {
 	const int NAME_SIZE = 10;
 
 	const string NAMES[]{ "Alex", "Danik", "Max", "Nikita", "Arseniy",
@@ -18,7 +18,7 @@ void Initializer::init(Student* students, int size) {
 	int maxClass = 11;
 	int minClass = 7;
 
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < group.getSize(); i++)
 	{
 		Student temp;
 		temp.setFirstName(NAMES[rand() % NAME_SIZE]);
@@ -31,6 +31,6 @@ void Initializer::init(Student* students, int size) {
 		//temp.setsubjects = nullptr;
 		temp.setGender('m');
 
-		students[i] = temp;
+		group.add(temp);
 	}
 }

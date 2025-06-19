@@ -1,9 +1,9 @@
 #pragma once
-#include "Student.h"
+#include "Group.h"
 
 // functional class
 class Initializer {
 public:
 	//...
-	void init(Student* students, int size);
+	void init(Group group);
 };
