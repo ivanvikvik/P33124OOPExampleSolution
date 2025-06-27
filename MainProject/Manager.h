@@ -1,4 +1,4 @@
-#include "Student.h"
+#include "Group.h"
 
 class Manager {
 public:
@@ -6,7 +6,7 @@ public:
 	const int MIN_MARK = 4;
 
 	// O(N)
-	Student findBestStudent(Student* students, int size);
-	Student findWorstStudent(Student* students, int size);
-	double calculateAverageMark(Student* students, int size);
+	Student findBestStudent(Group group);
+	Student findWorstStudent(Group group);
+	double calculateAverageMark(Group group);
 };

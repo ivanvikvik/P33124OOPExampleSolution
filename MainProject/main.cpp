@@ -1,34 +1,39 @@
 #include "Initializer.h"
 #include "Manager.h"
+#include "Worker.h"
 
 int main() {
-	int size;
+	Worker worker;
 
-	cout << "Input size of students: ";
-	cin >> size;
+	worker.
 
-	Student* students = new Student[size];
+	//int size;
 
-	Initializer initializer;
+	//cout << "Input size of students: ";
+	//cin >> size;
 
-	initializer.init(students, size);
+	//Student* students = new Student[size];
 
-	for (int i = 0; i < size; i++)
-	{
-		cout << students[i].toString() << endl;
-	}
+	//Initializer initializer;
 
-	Manager manager;
+	//initializer.init(students, size);
 
-	Student bestStudent = manager.findBestStudent(students, size);
-	Student worstStudent = manager.findWorstStudent(students, size);
-	double average = manager.calculateAverageMark(students, size);
+	//for (int i = 0; i < size; i++)
+	//{
+	//	cout << students[i].toString() << endl;
+	//}
 
-	cout << "Best student: " << bestStudent.toString() << endl;
-	cout << "Worst student: " << worstStudent.toString() << endl;
-	cout << "Students' average mark is " << average << endl;
-	
-	delete[] students;
+	//Manager manager;
+
+	//Student bestStudent = manager.findBestStudent(students, size);
+	//Student worstStudent = manager.findWorstStudent(students, size);
+	//double average = manager.calculateAverageMark(students, size);
+
+	//cout << "Best student: " << bestStudent.toString() << endl;
+	//cout << "Worst student: " << worstStudent.toString() << endl;
+	//cout << "Students' average mark is " << average << endl;
+	//
+	//delete[] students;
 	
 	return 0;
 }
