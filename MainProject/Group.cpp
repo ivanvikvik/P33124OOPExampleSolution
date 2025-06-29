@@ -88,7 +88,7 @@ void Group::remove(Student student) {
 
 		for (int i = 0, j = 0; i < size; i++)
 		{
-			if (!(students[i].getFirstName() == student.getFirstName() 
+			if (!(students[i].getFirstname() == student.getFirstname() 
 				&& students[i].getSurname() == student.getSurname()
 				&& students[i].getAge() == student.getAge())) {
 				temp[j] = students[i];

@@ -1,19 +1,21 @@
 #pragma once
 #include "Student.h"
 
+Student::Student() : Human("", "", 0, '\0', false), _class(_class),
+size(size), subjects(subjects) { //Student("", "", 0, 0, '\0', false, 0, 0 , nullptr) {
+	cout << "Constructor of class Student." << endl;
+	cout << "id = " << Student::id << endl;
+	cout << "id = " << Human::id << endl;
+}
+
 // canonical constructor (канонический конструктор)
 Student::Student(string firstname, string surname, int age, int _class,
-	char gender, bool alive, double mark, int size, string* subjects) {
-	//cout << "canonical constructor" << endl;
-	this->firstname = firstname;
-	this->setSurName(surname);
-	this->setAge(age);
+	char gender, bool alive, double mark, int size, string* subjects) :
+	Human(firstname, surname, age, gender, alive) {
 	this->_class = _class;
-	this->setAge(gender);
-	this->setAlive(alive);
 	this->mark = mark;
 	this->size = size;
-	this->subjects = subjects;
+	this->subjects = subjects;	
 }
 
 Student::~Student() {
@@ -21,6 +23,7 @@ Student::~Student() {
 	if (subjects != nullptr) {
 		delete[] subjects;
 	}
+	cout << "Destructor of class Student." << endl;
 }
 
 
@@ -45,13 +48,8 @@ void Student::setMark(int mark) {
 }
 
 string Student::toString() {
-	string s = getFirstName();
-	s += " " + getSurName() + ".";
-	s += ", age = " + to_string(age);
+	string s = Human::toString();
 	s += ", class = " + to_string(_class);
-	s += ", gender = " + to_string(gender);
-	s += ", is alive - ";
-	s += (isAlive() ? "yes" : "no");
 	s += ", average mark = " + to_string(mark);
 	return s;
 }

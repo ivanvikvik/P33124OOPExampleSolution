@@ -21,7 +21,7 @@ void Initializer::init(Group group) {
 	for (int i = 0; i < group.getSize(); i++)
 	{
 		Student temp;
-		temp.setFirstName(NAMES[rand() % NAME_SIZE]);
+		temp.setFirstname(NAMES[rand() % NAME_SIZE]);
 		temp.setSurname(to_string(ALFABET[rand() % ALFABET_SIZE]));
 		temp.setAlive(true);
 		temp.setAge(rand() % (maxAge - minAge + 1) + minAge);

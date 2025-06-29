@@ -7,6 +7,7 @@ private:
 	//...
 	
 protected:
+	int id = 1;
 	string firstname;
 	string surname;
 	int age;
@@ -19,10 +20,10 @@ public:
 		bool alive);
 	~Human();
 
-	string getFirstName();
-	void setFirstName(string firstname);
-	string getSurName();
-	void setSurName(string surname);
+	string getFirstname();
+	void setFirstname(string firstname);
+	string getSurname();
+	void setSurname(string surname);
 	int getAge();
 	void setAge(int age);
 	char getGender();

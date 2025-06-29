@@ -4,6 +4,7 @@
 // entity-class
 class Student : public Human {
 private:
+	int id = 100;
 	int _class;
 	double mark;
 	int size;
